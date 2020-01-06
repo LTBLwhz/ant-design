@@ -100,7 +100,6 @@
           height: 1em;
           line-height: 1em;
           transition: all 0.3s;
-
           &.on {
             color: @primary-color;
           }
@@ -139,7 +138,6 @@
             background: @table-header-filter-active-bg;
           }
         }
-
         // Very complicated styles logic but necessary
         &:hover {
           .@{iconfont-css-prefix}-filter,
@@ -148,7 +146,6 @@
               color: @text-color-secondary;
               background: @table-header-filter-active-bg;
             }
-
             &:active {
               color: @text-color;
             }
@@ -158,16 +155,13 @@
 
       &.@{table-prefix-cls}-column-has-sorters {
         cursor: pointer;
-
         &:hover {
           background: @table-header-sort-active-bg;
-
           .@{iconfont-css-prefix}-filter,
           .@{table-prefix-cls}-filter-icon {
             background: @table-header-sort-active-bg;
           }
         }
-
         &:active {
           .@{table-prefix-cls}-column-sorter-up:not(.on),
           .@{table-prefix-cls}-column-sorter-down:not(.on) {
@@ -193,7 +187,6 @@
         > *:not(.@{table-prefix-cls}-column-sorter) {
           position: relative;
         }
-
         &::before {
           position: absolute;
           top: 0;
@@ -204,7 +197,6 @@
           transition: all 0.3s;
           content: '';
         }
-
         &:hover::before {
           background: rgba(0, 0, 0, 0.04);
         }
@@ -240,24 +232,20 @@
   &-thead > tr,
   &-tbody > tr {
     transition: all 0.3s, height 0s;
-
     &.@{table-prefix-cls}-row-hover,
     &:hover {
       &:not(.@{table-prefix-cls}-expanded-row):not(.@{table-prefix-cls}-row-selected) > td {
         background: @table-row-hover-bg;
       }
     }
-
     &.@{table-prefix-cls}-row-selected > td {
       &.@{table-prefix-cls}-column-sort {
         background: @table-body-selected-sort-bg;
       }
     }
-
     &:hover {
       &.@{table-prefix-cls}-row-selected > td {
         background: @table-selected-row-hover-bg;
-
         &.@{table-prefix-cls}-column-sort {
           background: @table-body-selected-sort-bg;
         }
@@ -276,7 +264,6 @@
     background: @table-footer-bg;
     border-top: @border-width-base @border-style-base @border-color-split;
     border-radius: 0 0 @table-border-radius-base @table-border-radius-base;
-
     &::before {
       position: absolute;
       top: -1px;
@@ -347,7 +334,6 @@
   &-tbody > tr > td {
     padding: @table-padding-vertical @table-padding-horizontal;
     overflow-wrap: break-word;
-    background: #fff;
   }
 
   &-expand-icon-th,
@@ -359,7 +345,7 @@
 
   &-header {
     overflow: hidden;
-    // background: @table-header-bg;
+    background: @table-header-bg;
   }
 
   &-header table {
@@ -368,12 +354,10 @@
 
   &-loading {
     position: relative;
-
     .@{table-prefix-cls}-body {
       background: @component-background;
       opacity: 0.5;
     }
-
     .@{table-prefix-cls}-spin-holder {
       position: absolute;
       top: 50%;
@@ -382,11 +366,9 @@
       margin-left: -30px;
       line-height: 20px;
     }
-
     .@{table-prefix-cls}-with-pagination {
       margin-top: -20px;
     }
-
     .@{table-prefix-cls}-without-pagination {
       margin-top: 10px;
     }
@@ -510,19 +492,15 @@
 
     &-link {
       color: @link-color;
-
       &:hover {
         color: @link-hover-color;
       }
-
       &:active {
         color: @link-active-color;
       }
-
       &.confirm {
         float: left;
       }
-
       &.clear {
         float: right;
       }
@@ -559,7 +537,6 @@
       padding: 0;
       line-height: 1;
       cursor: pointer;
-
       &:hover .@{iconfont-css-prefix}-down {
         color: fade(@black, 60%);
       }
@@ -600,7 +577,6 @@
 
     &-spaced {
       visibility: hidden;
-
       &::after {
         content: '.';
       }
@@ -641,7 +617,6 @@
   &-scroll {
     overflow: auto;
     overflow-x: hidden;
-
     table {
       min-width: 100%;
 
@@ -685,7 +660,6 @@
     // https://stackoverflow.com/a/54101063
     // https://github.com/react-component/table/pull/333
     scrollbar-color: transparent transparent;
-
     &::-webkit-scrollbar {
       background-color: transparent;
     }
@@ -697,33 +671,12 @@
       border: 1px solid @border-color-split;
       border-width: 1px 1px 1px 0;
     }
-
     &.@{table-prefix-cls}-hide-scrollbar
       .@{table-prefix-cls}-thead
       > tr:only-child
       > th:last-child {
       border-right-color: transparent;
     }
-  }
-
-  &-fixed-left:after {
-    position: absolute;
-    top: 0;
-    right: 50px;
-    bottom: 0;
-    width: 10px;
-    box-shadow: 4px 0 5px -2px rgba(0, 0, 0, 0.15);
-    content: '\20';
-  }
-
-  &-fixed-right:after {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    bottom: 0;
-    width: 10px;
-    box-shadow: 4px 0 5px -2px rgba(0, 0, 0, 0.15);
-    content: '\20';
   }
 
   &-fixed-left,
@@ -734,18 +687,9 @@
     overflow: hidden;
     border-radius: 0;
     transition: box-shadow 0.3s ease;
-
     table {
       width: auto;
-      // background: @component-background;
-      background: transparent;
-
-      // tr {
-      //   td:last-of-type {
-      //     box-shadow: 6px 0 6px -4px @shadow-color;
-
-      //   }
-      // }
+      background: @component-background;
     }
   }
 
@@ -756,26 +700,22 @@
 
   &-fixed-left {
     left: 0;
-
+    box-shadow: 6px 0 6px -4px @shadow-color;
     .@{table-prefix-cls}-header {
       overflow-y: hidden;
     }
-
     // hide scrollbar in left fixed columns
     .@{table-prefix-cls}-body-inner {
       margin-right: -20px;
       padding-right: 20px;
     }
-
     .@{table-prefix-cls}-fixed-header & .@{table-prefix-cls}-body-inner {
       padding-right: 0;
     }
-
     &,
     table {
       border-radius: @table-border-radius-base 0 0 0;
     }
-
     .ant-table-thead > tr > th:last-child {
       border-top-right-radius: 0;
     }
@@ -783,49 +723,27 @@
 
   &-fixed-right {
     right: 0;
-    // box-shadow: -6px 0 6px -4px @shadow-color;
-
+    box-shadow: -6px 0 6px -4px @shadow-color;
     &,
     table {
       border-radius: 0 @table-border-radius-base 0 0;
     }
-
     // hide expand row content in right-fixed Table
     // https://github.com/ant-design/ant-design/issues/1898
     .@{table-prefix-cls}-expanded-row {
       color: transparent;
       pointer-events: none;
     }
-
     .ant-table-thead > tr > th:first-child {
       border-top-left-radius: 0;
     }
   }
 
-  &-fixed-left-scroll-btn,
-  &-fixed-right-scroll-btn {
-    z-index: 10;
-    transition: opacity 0.8s ease;
-    width: 50px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &&-scroll-position-left &-fixed-left:after {
+  &&-scroll-position-left &-fixed-left {
     box-shadow: none;
   }
 
-  &&-scroll-position-left &-fixed-left-scroll-btn {
-    display: none;
-  }
-
-  &&-scroll-position-right &-fixed-right-scroll-btn {
-    opacity: 0 !important;
-  }
-
-  &&-scroll-position-right &-fixed-right:after {
+  &&-scroll-position-right &-fixed-right {
     box-shadow: none;
   }
 
