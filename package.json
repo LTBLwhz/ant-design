@@ -127,7 +127,7 @@
     "rc-slider": "~8.7.1",
     "rc-steps": "~3.5.0",
     "rc-switch": "~1.9.0",
-    "rc-table": "~6.9.4",
+    "rc-table": "git://github.com/LTBLwhz/table.git#6.9.4fixedTest",
     "rc-tabs": "~9.6.4",
     "rc-time-picker": "~3.7.1",
     "rc-tooltip": "~3.7.3",

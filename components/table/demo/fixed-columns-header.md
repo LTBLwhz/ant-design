@@ -69,18 +69,18 @@ const columns = [
     key: '5',
     width: 150,
   },
-  {
-    title: 'Column 6',
-    dataIndex: 'address',
-    key: '6',
-    width: 150,
-  },
-  {
-    title: 'Column 7',
-    dataIndex: 'address',
-    key: '7',
-    width: 150,
-  },
+  // {
+  //   title: 'Column 6',
+  //   dataIndex: 'address',
+  //   key: '6',
+  //   width: 150,
+  // },
+  // {
+  //   title: 'Column 7',
+  //   dataIndex: 'address',
+  //   key: '7',
+  //   width: 150,
+  // },
   { title: 'Column 8', dataIndex: 'address', key: '8' },
   {
     title: 'Action',
@@ -102,7 +102,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 ReactDOM.render(
-  <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />,
+  <Table columns={columns} dataSource={data} scroll={{ x: 1200, y: 300 }} test={true} />,
   mountNode,
 );
 ```
