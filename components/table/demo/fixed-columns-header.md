@@ -100,9 +100,85 @@ for (let i = 0; i < 100; i++) {
     address: `London Park no. ${i}`,
   });
 }
-
 ReactDOM.render(
-  <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />,
+  <Table
+    id="table1"
+    columns={columns}
+    dataSource={data}
+    onRow={record => {
+      return {
+        // onClick: event => {}, // 点击行
+        // onDoubleClick: event => {},
+        // onContextMenu: event => {},
+        onMouseEnter: () => {
+          document.querySelectorAll(`[data-row-key='${record.key}'] .aux-button`).forEach(btn => {
+            btn.style.opacity = 1;
+          });
+        }, // 鼠标移入行
+        onMouseLeave: () => {
+          document.querySelectorAll(`[data-row-key='${record.key}'] .aux-button`).forEach(btn => {
+            btn.style.opacity = 0;
+          });
+        },
+      };
+    }}
+    scroll={{
+      x: 1500,
+      y: 300,
+      aux: [
+        {
+          render: () => (
+            <span
+              className="aux-button"
+              style={{
+                background: '#fff',
+                width: 32,
+                height: 32,
+                display: 'inline-block',
+                lineHeight: '32px',
+                textAlign: 'center',
+                borderRadius: 4,
+                position: 'absolute',
+                right: -50,
+                opacity: 0,
+                zIndex: 999,
+                boxShadow: '0 2px 4px 0 rgba(0,0,0,.1)',
+                top: '50%',
+                marginTop: -16,
+              }}
+            >
+              =&gt;
+            </span>
+          ),
+        },
+        {
+          render: () => (
+            <span
+              className="aux-button"
+              style={{
+                background: '#fff',
+                width: 32,
+                height: 32,
+                display: 'inline-block',
+                lineHeight: '32px',
+                textAlign: 'center',
+                opacity: 0,
+                borderRadius: 4,
+                position: 'absolute',
+                left: -50,
+                zIndex: 999,
+                boxShadow: '0 2px 4px 0 rgba(0,0,0,.1)',
+                top: '50%',
+                marginTop: -16,
+              }}
+            >
+              &lt;=
+            </span>
+          ),
+        },
+      ],
+    }}
+  />,
   mountNode,
 );
 ```
