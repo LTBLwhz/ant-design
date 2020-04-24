@@ -100,6 +100,7 @@ for (let i = 0; i < 100; i++) {
     address: `London Park no. ${i}`,
   });
 }
+
 ReactDOM.render(
   <Table
     id="table1"
@@ -146,6 +147,11 @@ ReactDOM.render(
                 top: '50%',
                 marginTop: -16,
               }}
+              onClick={() => {
+                const $table1 = document.querySelector('#table1 .ant-table-body');
+                const oldScrollLeft = $table1.scrollLeft;
+                $table1.scrollTo(oldScrollLeft + 50, 0);
+              }}
             >
               =&gt;
             </span>
@@ -170,6 +176,11 @@ ReactDOM.render(
                 boxShadow: '0 2px 4px 0 rgba(0,0,0,.1)',
                 top: '50%',
                 marginTop: -16,
+              }}
+              onClick={() => {
+                const $table1 = document.querySelector('#table1 .ant-table-body');
+                const oldScrollLeft = $table1.scrollLeft;
+                $table1.scrollTo(oldScrollLeft - 50, 0);
               }}
             >
               &lt;=
